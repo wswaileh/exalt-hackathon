@@ -17,8 +17,8 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 //ANGULAR FIREBASE
 import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule, AngularFirestore } from 'angularfire2/firestore';
-import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from 'src/environments/environment.prod';
 
 @NgModule({
@@ -36,8 +36,8 @@ import { environment } from 'src/environments/environment.prod';
     CarouselModule.forRoot(),
     //ANGULAR FIREBASE
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestore,
-    AngularFireAuth
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

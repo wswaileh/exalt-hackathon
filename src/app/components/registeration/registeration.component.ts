@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models/User';
+import { SignupService } from 'src/app/services/signup.service';
 
 @Component({
   selector: 'app-registeration',
@@ -15,16 +17,17 @@ export class RegisterationComponent {
   haveDisease:String;
   phone:String;
   id_number:number;
-  fullName:String
+  name:String
   cities:String[]
   bloodTypes:String[]
   email:String
   password:String
+  new_user=new User
 
-
-  constructor(private _formBuilder: FormBuilder,private router: Router) { }
+  constructor(private _formBuilder: FormBuilder,private router: Router,private signUpService:SignupService) { }
 
   ngOnInit() {
+    
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
     });
@@ -37,6 +40,7 @@ export class RegisterationComponent {
     });
     this.cities=['Ramallah','Jenin','Al-Qudis','Nablus']
     this.bloodTypes=['A+','A-','B+','B-','O+','O-','AB+','AB-']
+    
   }
   denied(str:String) {
     if(str==="yes"){
@@ -44,6 +48,11 @@ export class RegisterationComponent {
     }else{
       return true;
     }
+  }
+  onSubmit(user:User){
+    console.log(user)
+    // this.signUpService.register(user);
+    console.log("after >>>>>> "+this.signUpService.register(user))
   }
   
 

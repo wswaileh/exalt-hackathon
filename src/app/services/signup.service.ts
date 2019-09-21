@@ -10,7 +10,7 @@ export class SignupService {
 
   constructor(private firestore: AngularFirestore) {
 
-    this.users = firestore.collection('users');
+    this.users = firestore.collection<User>('users');
 
   }
 

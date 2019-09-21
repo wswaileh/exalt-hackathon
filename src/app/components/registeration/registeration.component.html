@@ -1,44 +1,45 @@
 <mat-horizontal-stepper [linear]="isLinear" #stepper>
     <mat-step [stepControl]="firstFormGroup">
-        <!-- <form [formGroup]="firstFormGroup"> -->
-        <ng-template matStepLabel>Pre-Requerments</ng-template>
-        <!-- <mat-form-field>
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Pre-Requerments</ng-template>
+            <!-- <mat-form-field>
                 <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
             </mat-form-field> -->
-        <section class="example-section">
-            <label class="example-margin" style="margin-right: 20px">Do You Have Any Disease:</label>
-            <mat-radio-group [(ngModel)]="haveDisease">
-                <mat-radio-button class="example-margin" value="yes">Yes</mat-radio-button>
-                <mat-radio-button class="example-margin" value="no">No</mat-radio-button>
-            </mat-radio-group>
-            <div>
-                <button mat-button matStepperNext (click)="denied(haveDisease)">Next</button>
-            </div>
-        </section>
-        <!-- </form> -->
+            <section class="example-section">
+                <label class="example-margin" style="margin-right: 20px">Do You Have Any Disease:</label>
+                <mat-radio-group [(ngModel)]="haveDisease">
+                    <mat-radio-button class="example-margin" value="yes">Yes</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="no">No</mat-radio-button>
+                </mat-radio-group>
+                <div>
+                    <button mat-button matStepperNext (click)="denied(haveDisease)">Next</button>
+                </div>
+            </section>
+        </form>
     </mat-step>
     <mat-step [stepControl]="secondFormGroup">
         <form [formGroup]="secondFormGroup">
             <ng-template matStepLabel>Fill out your information</ng-template>
             <div class="example-container">
                 <mat-form-field>
-                    <input matInput placeholder="FullName" formControlName="secondCtrl" required [(ngModel)]="fullName">
+                    <input matInput placeholder="FullName" formControlName="secondCtrl" required
+                        [(ngModel)]="new_user.name">
                 </mat-form-field>
                 <br>
 
                 <mat-form-field>
                     <span matPrefix>+970 &nbsp;</span><input type="tel" matInput placeholder="phone"
-                        formControlName="phone" required [(ngModel)]="phone">
+                        formControlName="phone" required [(ngModel)]="new_user.phone">
                 </mat-form-field>
                 <br>
 
                 <mat-form-field>
                     <input matInput placeholder="ID Number" formControlName="id_numberCheck" required
-                        [(ngModel)]="id_number">
+                        [(ngModel)]="new_user.id">
                 </mat-form-field><br>
                 <mat-form-field>
                     <mat-label>Your City</mat-label>
-                    <mat-select>
+                    <mat-select [(ngModel)]="new_user.city">
                         <mat-option *ngFor="let city of cities" [value]="city">
                             {{city}}
                         </mat-option>
@@ -46,7 +47,7 @@
                 </mat-form-field><br>
                 <mat-form-field>
                     <mat-label>Your Blood Type</mat-label>
-                    <mat-select>
+                    <mat-select [(ngModel)]="new_user.bloodType">
                         <mat-option *ngFor="let bloodType of bloodTypes" [value]="bloodType">
                             {{bloodType}}
                         </mat-option>
@@ -68,21 +69,21 @@
         <ng-template matStepLabel>Last Step</ng-template>
         <form [formGroup]="secondFormGroup">
 
-        <div class="example-container">
-            <mat-form-field>
-                <input matInput placeholder="Email" formControlName="email" required [(ngModel)]="email">
-            </mat-form-field>
-            <br>
+            <div class="example-container">
+                <mat-form-field>
+                    <input matInput placeholder="Email" formControlName="email" required [(ngModel)]="new_user.email">
+                </mat-form-field>
+                <br>
 
-            <mat-form-field>
-                <input matInput placeholder="Password" formControlName="password" required
-                    [(ngModel)]="password">
-            </mat-form-field><br>
-        </div>
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button (click)="stepper.reset()">Create</button>
-        </div>
+                <mat-form-field>
+                    <input matInput placeholder="Password" formControlName="password" required
+                        [(ngModel)]="new_user.password">
+                </mat-form-field><br>
+            </div>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button (click)="onSubmit(new_user)">Create</button>
+            </div>
         </form>
     </mat-step>
 </mat-horizontal-stepper>

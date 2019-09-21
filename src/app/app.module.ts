@@ -15,6 +15,12 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 //NGX-BOOSTRAP
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 
+//ANGULAR FIREBASE
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule, AngularFirestore } from 'angularfire2/firestore';
+import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
+import { environment } from 'src/environments/environment.prod';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +34,10 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     CollapseModule.forRoot(),
     //NGX-BOOTSTRAP
     CarouselModule.forRoot(),
+    //ANGULAR FIREBASE
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestore,
+    AngularFireAuth
   ],
   providers: [],
   bootstrap: [AppComponent]

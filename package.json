@@ -21,14 +21,11 @@
     "@angular/platform-browser": "~8.2.0",
     "@angular/platform-browser-dynamic": "~8.2.0",
     "@angular/router": "~8.2.0",
-<<<<<<< HEAD
     "bootstrap": "^4.3.1",
     "ngx-bootstrap": "^5.1.2",
     "primeng": "^8.0.3",
-=======
     "angularfire2": "^5.2.1",
     "firebase": "^6.6.2",
->>>>>>> db4da0bb26c39c1206365d80ebaf0445855a6b2a
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

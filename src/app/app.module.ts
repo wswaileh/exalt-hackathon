@@ -25,22 +25,24 @@ import { RegisterationComponent } from './components/registeration/registeration
 import { MatStepperModule } from '@angular/material/stepper';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatSelectModule} from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
 
 
 
 
 
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    RegisterationComponent
+    RegisterationComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -56,14 +58,13 @@ import {MatSelectModule} from '@angular/material/select';
     AngularFireAuthModule,
     MatStepperModule,
     FormsModule,
-    ReactiveFormsModule, 
+    ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
     MatRadioModule,
-    MatSelectModule
-
-     
+    MatSelectModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

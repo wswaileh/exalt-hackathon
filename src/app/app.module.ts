@@ -26,7 +26,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 //NGPRIME
-import {CardModule} from 'primeng/card';
+import { CardModule } from 'primeng/card';
 
 //MATERIAL
 import { MatCardModule } from '@angular/material/card';
@@ -40,6 +40,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { LoginComponent } from './components/login/login.component';
+import { ToastrModule } from 'ngx-toastr';
+import { ArchwizardModule } from 'ng2-archwizard';
+
+
 
 @NgModule({
   declarations: [
@@ -80,7 +84,9 @@ import { LoginComponent } from './components/login/login.component';
     MatButtonModule,
     MatRadioModule,
     MatSelectModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    ArchwizardModule,
+    ToastrModule.forRoot({ positionClass: 'toast-top-right', preventDuplicates: true })
   ],
   providers: [],
   bootstrap: [AppComponent]

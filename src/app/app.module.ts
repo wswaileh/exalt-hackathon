@@ -42,6 +42,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { LoginComponent } from './components/login/login.component';
 import { ToastrModule } from 'ngx-toastr';
 import { ArchwizardModule } from 'ng2-archwizard';
+import { BlockUIModule } from 'ng-block-ui';
+
 
 
 
@@ -84,6 +86,10 @@ import { ArchwizardModule } from 'ng2-archwizard';
     MatButtonModule,
     MatRadioModule,
     MatSelectModule,
+    BlockUIModule.forRoot({
+      delayStart: 500,
+      delayStop: 500
+    }),
     AngularFireAuthModule,
     ArchwizardModule,
     ToastrModule.forRoot({ positionClass: 'toast-top-right', preventDuplicates: true })

@@ -11,6 +11,8 @@ import { HomeComponent } from './components/home/home.component';
 import { HomeCardsContainerComponent } from './components/home-cards-container/home-cards-container.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { LoginComponent } from './components/login/login.component';
+import { UserHomeComponent } from './components/user-home/user-home.component';
 
 //NGX-BOOSTRAP
 import { CarouselModule } from 'ngx-bootstrap/carousel';
@@ -38,7 +40,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
-import { LoginComponent } from './components/login/login.component';
 import { MatDialogModule } from '@angular/material/dialog';
 
 //SVG 
@@ -48,7 +49,6 @@ import { InlineSVGModule } from 'ng-inline-svg';
 //Fontawesome
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
-import { UserHomeComponent } from './components/user-home/user-home.component';
 import { ToastrModule } from 'ngx-toastr';
 import { ArchwizardModule } from 'ng2-archwizard';
 import { BlockUIModule } from 'ng-block-ui';
@@ -56,6 +56,9 @@ import { AdminPanelComponent } from './components/admin-panel/admin-panel.compon
 import { ChartsComponent } from './components/admin-panel/charts/charts.component';
 import { ChartsModule } from 'ng2-charts';
 
+import { DonateComponent } from './components/donate/donate.component';
+import { UsersComponent } from './components/users/users.component';
+import { HospitalsComponent } from './components/hospitals/hospitals.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +75,11 @@ import { ChartsModule } from 'ng2-charts';
     AdminPanelComponent,
     ChartsComponent,
     
+    DonateComponent,
+    
+    UsersComponent,
+    
+    HospitalsComponent,
   ],
   imports: [
     BrowserModule,
@@ -115,8 +123,7 @@ import { ChartsModule } from 'ng2-charts';
     }),
     AngularFireAuthModule,
     ArchwizardModule,
-    ToastrModule.forRoot({ positionClass: 'toast-top-right', preventDuplicates: true })
-
+    ToastrModule.forRoot({ positionClass: 'toast-top-right', preventDuplicates: true }),
   ],
   providers: [],
   bootstrap: [AppComponent],

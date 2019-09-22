@@ -13,22 +13,22 @@ export class UserHomeComponent implements OnInit {
 
   hospital: string;
   numOfBloodUnits: string;
-
+  date: string;
   constructor() {
     this.origHistory = [];
     this.origHistory.push(
       new History(
-        '21-3-2019',
+        'Thu Mar 21 2019 13:54:56 GMT+0200 (Israel Standard Time)',
         'Istishari',
         '3'
       ),
       new History(
-        '21-3-2018',
+        'Thu Jun 21 2018 00:00:00 GMT+0300 (Israel Daylight Time)',
         'Bashir',
         '1'
       ),
       new History(
-        '23-5-2019',
+        'Wed Mar 21 2018 14:03:19 GMT+0200 (Israel Standard Time)',
         'Maqased',
         '2'
       ),
@@ -39,7 +39,6 @@ export class UserHomeComponent implements OnInit {
 
   ngOnInit() {
   }
-
 
   searchByNum() {
     if (this.numOfBloodUnits == "")

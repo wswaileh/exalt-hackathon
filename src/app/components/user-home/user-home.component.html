@@ -4,11 +4,11 @@
             <div class="col-sm-1 my-1">
                 <h1>Filter:</h1>
             </div>
-            <div class="col-sm-3 my-1">
+            <!-- <div class="col-sm-3 my-1">
                 <label class="sr-only" for="inlineFormInputName">Date</label>
                 <input type="text" placeholder="Date" class="form-control" bsDatepicker [bsConfig]="{isAnimated: true,dateInputFormat: 'DD-MM-YYYY'}"
-                    [(ngModel)]="date" name="date">
-            </div>
+                    [(ngModel)]="date" name="date" (bsValueChange)="searchByDate()">
+            </div> -->
             <div class="col-sm-3 my-1">
                 <label class="sr-only" for="inlineFormInputName">Hospital</label>
                 <input type="text" class="form-control" placeholder="Hospital name"
@@ -33,7 +33,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let entry of history">
-                <td id="col1">{{entry.date}}</td>
+                <td id="col1">{{entry.date | date}}</td>
                 <td id="col2">{{entry.hospital}}</td>
                 <td id="col3">{{entry.numOfBloodUnits}}</td>
             </tr>
@@ -43,3 +43,4 @@
 <div *ngIf="history.length == 0">
     <p>No donations were found!</p>
 </div>
+<a routerLink="/donate" class="btn btn-primary">Donate</a>

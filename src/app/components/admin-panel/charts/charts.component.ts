@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ChartOptions, ChartType } from 'chart.js';
 import { Label } from 'ng2-charts';
+import { User } from 'src/app/models/User';
+import { FetchAllUsersService } from 'src/app/services/fetch-all-users.service';
+import { Hospital } from 'src/app/models/Hospital';
+import { HospitalsService } from 'src/app/services/hospitals.service';
 
 @Component({
   selector: 'app-charts',
@@ -16,12 +20,34 @@ export class ChartsComponent implements OnInit {
   myValue2 = []
   
 
-  constructor( private route: ActivatedRoute) { }
+  constructor( private route: ActivatedRoute,private allUserService: FetchAllUsersService,private hos:HospitalsService) { }
   cities:String[]
   numbers:number[]
   hospitals:String[]
   donors:number[]
+  numOfUsers:number
+  numOfHospital:number
+  allUser: User[]
+  allHospitals:Hospital[]
+
+
   ngOnInit() {
+    this.allUserService.getAllUsers().subscribe(
+      (res:any) => {
+        this.allUser=res;
+        console.log(this.allUser)
+        this.numOfUsers=this.allUser.length;
+
+      }
+    );
+    this.hos.getAllHospitals().subscribe(
+      (res:any) => {
+        this.allHospitals=res;
+        this.numOfHospital=this.allHospitals.length;
+
+      }
+    );
+    
     this.cities=['Ramallah','Jenin','Nablus']
     this.numbers=[5000,9000,1000]
     

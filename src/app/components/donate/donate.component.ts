@@ -88,6 +88,6 @@ export class DonateComponent implements OnInit {
       date: donateReq.date,
     }
     console.log(this.new_donate_req);
-    
+    this.router.navigate(['/user-home']);
   }
 }

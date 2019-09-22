@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog , MatDialogConfig } from '@angular/material'
 import { LoginComponent } from '../login/login.component';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -14,7 +16,15 @@ export class NavbarComponent implements OnInit {
 
   userType: number; //1 GUEST - 2 USER - 3 Hospital - 4 ADMIN
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog ,private auth: AngularFireAuth , private router: Router) {
+
+    auth.authState.subscribe(user =>{
+      if(user){
+        dialog.closeAll();
+      }
+    })
+
+   }
 
   ngOnInit() {
     this.userType = 1;
@@ -28,5 +38,16 @@ export class NavbarComponent implements OnInit {
       this.dialog.open(LoginComponent);
       
   }
+
+  isLoggedIn(): boolean {
+    const  user  =  JSON.parse(localStorage.getItem('user'));
+    return  user  !==  null;
+}
+
+async logout(){
+  await this.auth.auth.signOut();
+  localStorage.removeItem('user');
+  this.router.navigate(['home']);
+}
 
 }

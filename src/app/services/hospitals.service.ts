@@ -10,16 +10,16 @@ export class HospitalsService {
 
   hospitalCollection: AngularFirestoreCollection<Hospital>;
 
-  hospitals: Observable<Hospital[]>;
+  // hospitals: Observable<Hospital[]>;
 
   constructor(private firestore: AngularFirestore) {
 
-      this.hospitalCollection  = firestore.collection('hospitals');
+      // this.hospitalCollection  = firestore.collection('hospitals');
 
-        this.hospitals = this.hospitalCollection.valueChanges();
+      //   this.hospitals = this.hospitalCollection.valueChanges();
 
    }
    getAllHospitals(){
-     return this.hospitals;
-   }
+    return this.firestore.collection("hospitals").valueChanges();
+  }
 }

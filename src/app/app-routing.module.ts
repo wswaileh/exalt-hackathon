@@ -11,6 +11,7 @@ import { HospitalHomeComponent } from './components/hospital-home/hospital-home.
 import { UsersComponent } from './components/users/users.component';
 import { HospitalsComponent } from './components/hospitals/hospitals.component';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { HospitalAddEmergencyComponent } from './components/hospital-add-emergency/hospital-add-emergency.component';
 
 const routes: Routes = [
   { path:"home", component: HomeComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path:"donate",component:DonateComponent},
   { path:"admin",component:AdminPanelComponent},
   { path:"admin/:id",component:AdminPanelComponent},
+  { path:"add-emergency",component:HospitalAddEmergencyComponent},
 ];
 
 @NgModule({

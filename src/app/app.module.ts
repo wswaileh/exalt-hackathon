@@ -60,6 +60,7 @@ import { DonateComponent } from './components/donate/donate.component';
 import { HospitalHomeComponent } from './components/hospital-home/hospital-home.component';
 import { UsersComponent } from './components/users/users.component';
 import { HospitalsComponent } from './components/hospitals/hospitals.component';
+import { HospitalAddEmergencyComponent } from './components/hospital-add-emergency/hospital-add-emergency.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import { HospitalsComponent } from './components/hospitals/hospitals.component';
     HospitalHomeComponent,
     UsersComponent,
     HospitalsComponent,
+    HospitalAddEmergencyComponent,
   ],
   imports: [
     BrowserModule,

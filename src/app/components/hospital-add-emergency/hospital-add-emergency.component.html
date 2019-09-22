@@ -1,0 +1,18 @@
+<form [formGroup]="secondFormGroup" (ngSubmit)="onSubmit1()" class="sign-in">
+    <div class="form-group">
+        <label>Blood Type</label>
+        <select class="form-control" [(ngModel)]="bloodType" formControlName="bloodType"
+            [ngClass]="{ 'is-invalid': f2.bloodType.errors && f2.bloodType.touched }">
+            <option *ngFor="let bloodType of bloodTypes" value="{{ bloodType }}">
+                {{bloodType}}
+            </option>
+        </select>
+        <div *ngIf="f2.bloodType.errors && f2.bloodType.touched" class="invalid-feedback">
+            <div *ngIf="f2.bloodType.errors.required">blood Type is required</div>
+        </div>
+    </div>
+    <div>
+        <button type="button" nextStep [disabled]="!secondFormGroup.valid" class="btn btn-success">Go to next
+            step</button>
+    </div>
+</form>

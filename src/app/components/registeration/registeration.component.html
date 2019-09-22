@@ -52,14 +52,21 @@
 
                                 <div class="form-group">
                                     <label>Phone</label>
-                                    <input type="tel" formControlName="phone" [(ngModel)]="new_user.phone"
-                                        class="form-control"
-                                        [ngClass]="{ 'is-invalid': f2.phone.errors && f2.phone.touched  }" />
-
-                                    <div *ngIf="f2.phone.errors && f2.phone.touched " class="invalid-feedback">
-                                        <div *ngIf="f2.phone.errors.required">phone is required</div>
-                                        <div *ngIf="f2.phone.errors.minlength">phone must be at least 10 characters
+                                    <div class="input-group mb-3 ">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1">+970</span>
                                         </div>
+
+                                        <input type="tel" formControlName="phone" [(ngModel)]="new_user.phone"
+                                            class="form-control"
+                                            [ngClass]="{ 'is-invalid': f2.phone.errors && f2.phone.touched  }" />
+                                        <div *ngIf="f2.phone.errors && f2.phone.touched " class="invalid-feedback">
+                                            <div *ngIf="f2.phone.errors.required">phone is required</div>
+                                            <div *ngIf="f2.phone.errors.minlength">phone must be 9 characters
+                                                
+                                            </div>
+                                        </div>
+
 
                                     </div>
                                 </div>

@@ -67,7 +67,7 @@ export class RegisterationComponent {
     this.secondFormGroup = this._formBuilder.group({
       name: ['', Validators.required],
       id_numberCheck: ['', [Validators.required, Validators.minLength(9)]],
-      phone: ['', [Validators.required, Validators.minLength(10)]],
+      phone: ['', [Validators.required, Validators.minLength(9)]],
       city: ['', Validators.required],
       bloodType: ['', Validators.required]
     });

@@ -19,6 +19,7 @@ export class AdminPanelComponent implements OnInit {
   }
   logout(){
     this.router.navigate(['/home'])
+    localStorage.setItem("role" , "guest");
   }
 
 }

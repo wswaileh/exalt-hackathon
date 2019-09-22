@@ -28,6 +28,7 @@
     "firebase": "^6.6.2",
     "font-awesome": "^4.7.0",
     "ng-block-ui": "^2.1.7",
+    "ng-circle-progress": "^1.5.1",
     "ng-inline-svg": "^9.0.1",
     "ng2-archwizard": "^2.1.0",
     "ng2-charts": "^2.3.0",

@@ -12,8 +12,6 @@ import { HomeCardsContainerComponent } from './components/home-cards-container/h
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 
-
-
 //NGX-BOOSTRAP
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 
@@ -26,7 +24,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 //NGPRIME
-import {CardModule} from 'primeng/card';
+import {TableModule} from 'primeng/table';
 
 //MATERIAL
 import { MatCardModule } from '@angular/material/card';
@@ -40,6 +38,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { LoginComponent } from './components/login/login.component';
+import { UserHomeComponent } from './components/user-home/user-home.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +50,8 @@ import { LoginComponent } from './components/login/login.component';
     FooterComponent,
     ContactUsComponent,
     RegisterationComponent,
-    LoginComponent
+    LoginComponent,
+    UserHomeComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +66,7 @@ import { LoginComponent } from './components/login/login.component';
     AngularFirestoreModule,
     AngularFireAuthModule,
     //ngPrime
-    CardModule,
+    TableModule,
     //MATERIAL
     MatCardModule,
     MatButtonModule,

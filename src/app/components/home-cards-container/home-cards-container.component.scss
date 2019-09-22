@@ -1,22 +1,6 @@
-mat-card{
-    width: calc(73% / 3);
-    display: inline-block;
-    margin: 0 1%;
-    padding: 5%;
+.row{
+    padding: 0 10%;
 }
-
-mat-card:after {
-    content: "";
-    display: block;
-    padding-bottom: 20%;
+.text-small {
+    font-size: 0.75rem;
   }
-
-@media screen and (max-width :700px){
-    mat-card{
-        width: 73%;
-        display: block;
-        margin: 10px auto;
-    }
-
-    
-}

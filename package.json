@@ -28,6 +28,7 @@
     "font-awesome": "^4.7.0",
     "ng-inline-svg": "^9.0.1",
     "ngx-bootstrap": "^5.1.2",
+    "ngx-toastr": "^10.2.0",
     "primeng": "^8.0.3",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",

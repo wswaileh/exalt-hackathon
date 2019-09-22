@@ -12,8 +12,6 @@ import { HomeCardsContainerComponent } from './components/home-cards-container/h
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 
-
-
 //NGX-BOOSTRAP
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 
@@ -26,7 +24,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 //NGPRIME
-import {CardModule} from 'primeng/card';
+import {TableModule} from 'primeng/table';
 
 //MATERIAL
 import { MatCardModule } from '@angular/material/card';
@@ -49,6 +47,11 @@ import { InlineSVGModule } from 'ng-inline-svg';
 //Fontawesome
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
+import { UserHomeComponent } from './components/user-home/user-home.component';
+import { ToastrModule } from 'ngx-toastr';
+import { ArchwizardModule } from 'ng2-archwizard';
+import { BlockUIModule } from 'ng-block-ui';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +62,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     FooterComponent,
     ContactUsComponent,
     RegisterationComponent,
-    LoginComponent
+    LoginComponent,
+    UserHomeComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +78,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     AngularFirestoreModule,
     AngularFireAuthModule,
     //ngPrime
-    CardModule,
+    TableModule,
     //MATERIAL
     MatCardModule,
     MatButtonModule,
@@ -88,11 +92,21 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     MatButtonModule,
     MatRadioModule,
     MatSelectModule,
+
     AngularFireAuthModule,
     MatDialogModule,
 
     //Fontawesome
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+
+    BlockUIModule.forRoot({
+      delayStart: 500,
+      delayStop: 500
+    }),
+    AngularFireAuthModule,
+    ArchwizardModule,
+    ToastrModule.forRoot({ positionClass: 'toast-top-right', preventDuplicates: true })
+
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -6,3 +6,16 @@
     padding: 0;
     border: none;
 }
+
+#title{
+    margin-left: 10px;
+}
+
+.nav-link{
+    color: white !important;
+    padding: 25px !important;
+}
+
+.nav-item:hover{
+    background-color: darken($color: #343A40, $amount: 20%);
+}

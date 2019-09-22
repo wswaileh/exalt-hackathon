@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { User } from '../models/User';
 import { Observable } from 'rxjs';
 
@@ -14,7 +14,6 @@ export class FetchUserDataService {
 
 
   constructor(private firestore: AngularFirestore) {
-
     this.usersCollection = firestore.collection<User>('users');
   }
 

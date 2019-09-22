@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore'
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore'
 import { User } from '../models/User';
 @Injectable({
   providedIn: 'root'
@@ -23,6 +23,6 @@ export class SignupService {
       .catch(function (error) {
         return false;
       })
-
+    return true;
   }
 }

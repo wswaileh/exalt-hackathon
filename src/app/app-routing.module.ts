@@ -5,6 +5,7 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 import { LoginComponent } from './components/login/login.component';
 import { RegisterationComponent } from './components/registeration/registeration.component';
 import { UserHomeComponent } from './components/user-home/user-home.component';
+import { DonateComponent } from './components/donate/donate.component';
 
 const routes: Routes = [
   { path:"home", component: HomeComponent },
@@ -13,7 +14,7 @@ const routes: Routes = [
   { path:"contact-us",component:ContactUsComponent },
   { path:"register",component:RegisterationComponent },
   { path:"user-home",component:UserHomeComponent },
-  
+  { path:"donate",component:DonateComponent},
 ];
 
 @NgModule({

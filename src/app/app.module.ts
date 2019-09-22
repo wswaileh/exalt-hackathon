@@ -11,6 +11,8 @@ import { HomeComponent } from './components/home/home.component';
 import { HomeCardsContainerComponent } from './components/home-cards-container/home-cards-container.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { LoginComponent } from './components/login/login.component';
+import { UserHomeComponent } from './components/user-home/user-home.component';
 
 //NGX-BOOSTRAP
 import { CarouselModule } from 'ngx-bootstrap/carousel';
@@ -38,11 +40,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
-import { LoginComponent } from './components/login/login.component';
-import { UserHomeComponent } from './components/user-home/user-home.component';
+
 import { ToastrModule } from 'ngx-toastr';
 import { ArchwizardModule } from 'ng2-archwizard';
 import { BlockUIModule } from 'ng-block-ui';
+import { DonateComponent } from './components/donate/donate.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,7 @@ import { BlockUIModule } from 'ng-block-ui';
     RegisterationComponent,
     LoginComponent,
     UserHomeComponent,
+    DonateComponent,
   ],
   imports: [
     BrowserModule,
@@ -91,7 +94,7 @@ import { BlockUIModule } from 'ng-block-ui';
     }),
     AngularFireAuthModule,
     ArchwizardModule,
-    ToastrModule.forRoot({ positionClass: 'toast-top-right', preventDuplicates: true })
+    ToastrModule.forRoot({ positionClass: 'toast-top-right', preventDuplicates: true }),
   ],
   providers: [],
   bootstrap: [AppComponent]

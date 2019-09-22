@@ -43,7 +43,7 @@ export class RegisterationComponent {
 
     setTimeout(() => {
       this.blockUI.stop(); // Stop blocking
-      this.router.navigate(['/home'])
+      this.router.navigate(['/user-home'])
     }, 2000);  }
 
   ngOnInit() {

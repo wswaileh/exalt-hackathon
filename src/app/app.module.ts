@@ -40,6 +40,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
+
+//SVG 
+import { InlineSVGModule } from 'ng-inline-svg';
+
+
+//Fontawesome
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { ToastrModule } from 'ngx-toastr';
 import { ArchwizardModule } from 'ng2-archwizard';
@@ -88,6 +96,13 @@ import { DonateComponent } from './components/donate/donate.component';
     MatButtonModule,
     MatRadioModule,
     MatSelectModule,
+
+    AngularFireAuthModule,
+    MatDialogModule,
+
+    //Fontawesome
+    AngularFontAwesomeModule,
+
     BlockUIModule.forRoot({
       delayStart: 500,
       delayStop: 500
@@ -97,6 +112,7 @@ import { DonateComponent } from './components/donate/donate.component';
     ToastrModule.forRoot({ positionClass: 'toast-top-right', preventDuplicates: true }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [LoginComponent]
 })
 export class AppModule { }

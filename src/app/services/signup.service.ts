@@ -23,6 +23,6 @@ export class SignupService {
       .catch(function (error) {
         return false;
       })
-
+    return true;
   }
 }

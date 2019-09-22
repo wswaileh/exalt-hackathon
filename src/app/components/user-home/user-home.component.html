@@ -1,7 +1,7 @@
 <div>
-    <p>Hello</p>
+    
 </div>
-<table class="table">
+<table class="table" *ngIf="history">
     <thead class="thead-dark">
         <tr>
             <th scope="col">Date</th>
@@ -17,3 +17,7 @@
         </tr>
     </tbody>
 </table>
+
+<div *ngIf="!history">
+    <p>No Previous Donations Where Found!</p>
+</div>

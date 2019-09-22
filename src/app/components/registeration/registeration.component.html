@@ -1,89 +1,172 @@
-<mat-horizontal-stepper [linear]="isLinear" #stepper>
-    <mat-step [stepControl]="firstFormGroup">
-        <form [formGroup]="firstFormGroup">
-            <ng-template matStepLabel>Pre-Requerments</ng-template>
-            <!-- <mat-form-field>
-                <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-            </mat-form-field> -->
-            <section class="example-section">
-                <label class="example-margin" style="margin-right: 20px">Do You Have Any Disease:</label>
-                <mat-radio-group [(ngModel)]="haveDisease">
-                    <mat-radio-button class="example-margin" value="yes">Yes</mat-radio-button>
-                    <mat-radio-button class="example-margin" value="no">No</mat-radio-button>
-                </mat-radio-group>
-                <div>
-                    <button mat-button matStepperNext (click)="denied(haveDisease)">Next</button>
+<wizard style="margin-top: 30px">
+    <wizard-step stepTitle="Pre-requerments" [canExit]='true'>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                    <div class="card card-signin my-5">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Pre-requerments</h5>
+                            <form [formGroup]="firstFormGroup" (ngSubmit)="onSubmit2()" class="sign-in">
+                                <div class="form-group">
+
+                                    <p>
+                                        <label style="margin-right:6px "> Do You have any Disease ? </label>
+                                        <input type="radio" value="yes" formControlName="haveDisease"> Yes
+                                        <input type="radio" value="no" formControlName="haveDisease"> No
+                                    </p>
+
+
+                                </div>
+                                <div>
+                                    <button type="button" nextStep (click)="denied()" class="btn btn-success">Next
+                                        Step</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
                 </div>
-            </section>
-        </form>
-    </mat-step>
-    <mat-step [stepControl]="secondFormGroup">
-        <form [formGroup]="secondFormGroup">
-            <ng-template matStepLabel>Fill out your information</ng-template>
-            <div class="example-container">
-                <mat-form-field>
-                    <input matInput placeholder="FullName" formControlName="secondCtrl" required
-                        [(ngModel)]="new_user.name">
-                </mat-form-field>
-                <br>
-
-                <mat-form-field>
-                    <span matPrefix>+970 &nbsp;</span><input type="tel" matInput placeholder="phone"
-                        formControlName="phone" required [(ngModel)]="new_user.phone">
-                </mat-form-field>
-                <br>
-
-                <mat-form-field>
-                    <input matInput placeholder="ID Number" formControlName="id_numberCheck" required
-                        [(ngModel)]="new_user.id">
-                </mat-form-field><br>
-                <mat-form-field>
-                    <mat-label>Your City</mat-label>
-                    <mat-select [(ngModel)]="new_user.city">
-                        <mat-option *ngFor="let city of cities" [value]="city">
-                            {{city}}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field><br>
-                <mat-form-field>
-                    <mat-label>Your Blood Type</mat-label>
-                    <mat-select [(ngModel)]="new_user.bloodType">
-                        <mat-option *ngFor="let bloodType of bloodTypes" [value]="bloodType">
-                            {{bloodType}}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field><br>
             </div>
+        </div>
+    </wizard-step>
+    <wizard-step stepTitle="fill your informayion" awOptionalStep>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                    <div class="card card-signin my-5">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">fill your informayion</h5>
+                            <form [formGroup]="secondFormGroup" (ngSubmit)="onSubmit1()" class="sign-in">
 
+                                <div class="form-group">
+                                    <label>FullName</label>
+                                    <input type="text" formControlName="name" [(ngModel)]="new_user.name"
+                                        class="form-control"
+                                        [ngClass]="{ 'is-invalid':  f2.name.errors && f2.name.touched }" />
 
-            {{fullName}}
-            {{phone}}
-            {{id_number}}
-            <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
+                                    <div *ngIf=" f2.name.errors && f2.name.touched" class="invalid-feedback">
+                                        <div *ngIf="f2.name.errors.required">Your Name is required</div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Phone</label>
+                                    <input type="tel" formControlName="phone" [(ngModel)]="new_user.phone"
+                                        class="form-control"
+                                        [ngClass]="{ 'is-invalid': f2.phone.errors && f2.phone.touched  }" />
+
+                                    <div *ngIf="f2.phone.errors && f2.phone.touched " class="invalid-feedback">
+                                        <div *ngIf="f2.phone.errors.required">phone is required</div>
+                                        <div *ngIf="f2.phone.errors.minlength">phone must be at least 10 characters
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>ID Number</label>
+                                    <input formControlName="id_numberCheck" class="form-control"
+                                        [(ngModel)]="new_user.id"
+                                        [ngClass]="{ 'is-invalid': f2.id_numberCheck.errors && f2.id_numberCheck.touched  }" />
+
+                                    <div *ngIf="f2.id_numberCheck.errors && f2.id_numberCheck.touched "
+                                        class="invalid-feedback">
+                                        <div *ngIf="f2.id_numberCheck.errors.required">your ID is required</div>
+                                        <div *ngIf="f2.id_numberCheck.errors.minlength">ID must be at least 9
+                                            characters
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>City</label>
+                                    <select class="form-control" [(ngModel)]="new_user.city" formControlName="city"
+                                        [ngClass]="{ 'is-invalid':  f2.city.errors && f2.city.touched }">
+                                        <option *ngFor="let city of cities" value="{{ city }}">
+                                            {{city}}
+                                        </option>
+                                    </select>
+                                    <div *ngIf="submitted && f2.city.errors" class="invalid-feedback">
+                                        <div *ngIf="f2.city.errors.required">city is required</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Blood Type</label>
+                                    <select class="form-control" [(ngModel)]="new_user.bloodType"
+                                        formControlName="bloodType"
+                                        [ngClass]="{ 'is-invalid': f2.bloodType.errors && f2.bloodType.touched }">
+                                        <option *ngFor="let bloodType of bloodTypes" value="{{ bloodType }}">
+                                            {{bloodType}}
+                                        </option>
+                                    </select>
+                                    <div *ngIf="f2.bloodType.errors && f2.bloodType.touched" class="invalid-feedback">
+                                        <div *ngIf="f2.bloodType.errors.required">blood Type is required</div>
+                                    </div>
+
+                                </div>
+                                <div>
+                                    <button type="button" previousStep class="btn btn-primary">Go to previous
+                                        step</button>
+                                    <button type="button" nextStep [disabled]=" !secondFormGroup.valid"
+                                        class="btn btn-success">Go to next step</button>
+                                    <!-- [disabled]="!f2.bloodType.touched" -->
+                                    <!-- !new_user.bloodType || !new_user.city || -->
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </form>
-    </mat-step>
-    <mat-step>
-        <ng-template matStepLabel>Last Step</ng-template>
-        <form [formGroup]="secondFormGroup">
+        </div>
 
-            <div class="example-container">
-                <mat-form-field>
-                    <input matInput placeholder="Email" formControlName="email" required [(ngModel)]="new_user.email">
-                </mat-form-field>
-                <br>
+    </wizard-step>
+    <wizard-step stepTitle="Last Step">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                    <div class="card card-signin my-5">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Last Step</h5>
+                            <form [formGroup]="thirdFormGroup" (ngSubmit)="onSubmit2()" class="sign-in">
 
-                <mat-form-field>
-                    <input matInput placeholder="Password" formControlName="password" required
-                        [(ngModel)]="new_user.password">
-                </mat-form-field><br>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" formControlName="email" class="form-control"
+                                        [(ngModel)]="new_user.email"
+                                        [ngClass]="{ 'is-invalid': f3.email.errors && f3.email.touched }" />
+
+                                    <div *ngIf="f3.email.errors && f3.email.touched" class="invalid-feedback">
+                                        <div *ngIf="f3.email.errors.required">email is required</div>
+                                        <div *ngIf="f3.email.errors.value">email is required</div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" formControlName="password" [(ngModel)]="new_user.password"
+                                        class="form-control"
+                                        [ngClass]="{ 'is-invalid': f3.password.errors && f3.password.touched }" />
+
+                                    <div *ngIf="f3.password.errors && f3.password.touched" class="invalid-feedback">
+                                        <div *ngIf="f3.password.errors.required">Password is required</div>
+                                        <div *ngIf="f3.password.errors.minlength">Password must be at least 6 characters
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <button (click)=onSubmit(new_user);blockLoading() class="btn btn-primary"
+                                        style="width: 100%" [disabled]="!thirdFormGroup.valid">Create</button>
+                                </div>
+                                <block-ui [delayStart]="500" [delayStop]="500" *ngIf="clickedForBlock">
+                                    <!-- Your app markup here -->
+                                </block-ui>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button (click)="onSubmit(new_user)">Create</button>
-            </div>
-        </form>
-    </mat-step>
-</mat-horizontal-stepper>
+        </div>
+    </wizard-step>
+</wizard>

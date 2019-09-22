@@ -53,6 +53,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { ArchwizardModule } from 'ng2-archwizard';
 import { BlockUIModule } from 'ng-block-ui';
 import { DonateComponent } from './components/donate/donate.component';
+import { HospitalHomeComponent } from './components/hospital-home/hospital-home.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { DonateComponent } from './components/donate/donate.component';
     LoginComponent,
     UserHomeComponent,
     DonateComponent,
+    HospitalHomeComponent,
   ],
   imports: [
     BrowserModule,

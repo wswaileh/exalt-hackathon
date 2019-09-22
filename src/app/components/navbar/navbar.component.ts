@@ -12,9 +12,12 @@ export class NavbarComponent implements OnInit {
   title: String = "Blood Donation";
   isNavbarCollapsed = true;
 
+  userType: number; //1 GUEST - 2 USER - 3 Hospital - 4 ADMIN
+
   constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
+    this.userType = 1;
   }
 
   collapse() {

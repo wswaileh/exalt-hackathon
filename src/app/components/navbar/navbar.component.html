@@ -2,7 +2,7 @@
     <a class="navbar-brand" routerLink="">
         <img src="../../../assets/icon_large.png" width="45" height="45" class="d-inline-block align-top" alt="">
         <span id="title">{{title}}</span>
-      </a>
+    </a>
 
     <i class="material-icons navbar-toggler" id="more" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
@@ -10,9 +10,16 @@
 
     <div class="collapse navbar-collapse" id="navbarNav" [collapse]="isNavbarCollapsed">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
+            <!-- GUEST -->
+            <li class="nav-item" *ngIf="userType==1">
                 <a class="nav-link" (click)="collapse() ; login()">Login</a>
             </li>
+
+            <!-- ALL -->
+            <li class="nav-item" *ngIf="userType!=1">
+                <a class="nav-link" (click)="collapse() ; login()">Logout</a>
+            </li>
+
         </ul>
     </div>
 </nav>

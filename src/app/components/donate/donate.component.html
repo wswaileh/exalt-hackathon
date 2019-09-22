@@ -1,1 +1,90 @@
-<p>donate works!</p>
+<wizard style="margin-top: 30px">
+    <wizard-step stepTitle="Pre-requerments" [canExit]='true'>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                    <div class="card card-signin my-5">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Pre-requirments</h5>
+                            <form [formGroup]="firstFormGroup" (ngSubmit)="onSubmit2()" class="sign-in">
+                                <div class="form-group">
+                                    <p>To be able to donate blood you must meet the following requirments: </p>
+                                    <ul>
+                                        <li>You must be in good health and have no infectious diseases.</li>
+                                        <li>Your age must be between 18-65.</li>
+                                        <li>Your weight must be over 50KGS.</li>
+                                        <li>Your weight must be over 50KGS.</li>
+                                        <li>Hemoglobin must be 14-17 for men, 12-14 for women.</li>
+                                        <li>Your Heart beat rate must be 50-100 beat/minute.</li>
+                                        <li>Your body temperature must be 37 degrees.</li>
+                                        <li>Your blood pressure must be less than 120/80.</li>
+                                    </ul>
+                                    <label style="margin-right:6px "> Do You Meet the requirments?</label>
+                                    <input type="radio" value="yes" formControlName="haveDisease">Yes
+                                    <input type="radio" value="no" formControlName="haveDisease">No
+                                </div>
+                                <div>
+                                    <button type="button" nextStep (click)="denied()" class="btn btn-success">Next
+                                        Step</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </wizard-step>
+    <wizard-step stepTitle="fill your information" awOptionalStep>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                    <div class="card card-signin my-5">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">fill your information</h5>
+                            <form [formGroup]="secondFormGroup" (ngSubmit)="onSubmit()" class="sign-in"
+                                autocomplete="off">
+                                <div class="form-group">
+                                    <label>City</label>
+                                    <select class="form-control" [(ngModel)]="new_donate_req.city"
+                                        formControlName="city"
+                                        [ngClass]="{ 'is-invalid':  f2.city.errors && f2.city.touched }">
+                                        <option *ngFor="let city of cities" value="{{ city }}">
+                                            {{city}}
+                                        </option>
+                                    </select>
+                                    <div *ngIf="submitted && f2.city.errors" class="invalid-feedback">
+                                        <div *ngIf="f2.city.errors.required">city is required</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Hospital Name</label>
+                                    <select class="form-control" [(ngModel)]="new_donate_req.hospital"
+                                        formControlName="hospital"
+                                        [ngClass]="{ 'is-invalid': f2.hospital.errors && f2.hospital.touched }">
+                                        <option *ngFor="let hospital of hospitals" value="{{ hospital }}">
+                                            {{hospital}}
+                                        </option>
+                                    </select>
+                                    <div *ngIf="f2.hospital.errors && f2.hospital.touched" class="invalid-feedback">
+                                        <div *ngIf="f2.hospital.errors.required">hospital is required</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Date</label>
+                                    <input type="text" placeholder="Date" class="form-control" bsDatepicker
+                                        [bsConfig]="{isAnimated: true,dateInputFormat: 'DD-MM-YYYY'}"
+                                        [(ngModel)]="new_donate_req.date" formControlName="date">
+                                </div>
+                                <div>
+                                    <button (click)=onSubmit(new_donate_req); class="btn btn-primary" style="width: 100%"
+                                        [disabled]="!secondFormGroup.valid">Add Request</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </wizard-step>
+</wizard>

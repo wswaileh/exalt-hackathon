@@ -14,7 +14,7 @@ export class SignupService {
 
   }
 
-  register(user: User): boolean {
+  register(user: User){
 
 
     this.users.add(user).then(function (result) {
@@ -22,8 +22,6 @@ export class SignupService {
     }, function (err) {
       return false;
     });
-
-    return false;
 
   }
 }

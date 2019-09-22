@@ -2,4 +2,21 @@ mat-card{
     width: calc(73% / 3);
     display: inline-block;
     margin: 0 1%;
+    padding: 5%;
+}
+
+mat-card:after {
+    content: "";
+    display: block;
+    padding-bottom: 20%;
+  }
+
+@media screen and (max-width :700px){
+    mat-card{
+        width: 73%;
+        display: block;
+        margin: 10px auto;
+    }
+
+    
 }

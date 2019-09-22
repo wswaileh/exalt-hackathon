@@ -3,6 +3,16 @@
     margin: 1% 0;
 }
 
+app-gallery {
+    width: 80%;
+}
+
 app-home-cards-container{
     padding: 10%;
+}
+
+@media screen and (max-width :700px){
+    h1{
+        font-size: 30px;
+    }
 }

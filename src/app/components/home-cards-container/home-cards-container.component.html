@@ -1,4 +1,4 @@
-<mat-card class="example-card">
+<mat-card>
     <mat-card-header>
         <mat-card-title>Want to become a donor?</mat-card-title>
     </mat-card-header>
@@ -8,32 +8,30 @@
         </p>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-button routerLink="/register">Register</button>
+        <button mat-raised-button color="warn" routerLink="/register">Register</button>
     </mat-card-actions>
 </mat-card>
-<mat-card class="example-card">
+<mat-card>
     <mat-card-header>
         <mat-card-title>Want to become a partner?</mat-card-title>
     </mat-card-header>
     <mat-card-content>
         <p>
-            Contact us now!
+            Are you a hospital who is interested in becoming a partner? Contact us now!
         </p>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-button routerLink="/contact-us">Contact us</button>
+        <button mat-raised-button color="warn" routerLink="/contact-us">Contact us</button>
     </mat-card-actions>
 </mat-card>
-<mat-card class="example-card">
+<mat-card>
     <mat-card-header>
         <mat-card-title>Don't Know Where To Donate?</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-        <p>
-            Search Now!
-        </p>
+        <input class="form-control" type="text" placeholder="City Name">
     </mat-card-content>
     <mat-card-actions>
-        <button mat-button>LIKE</button>
+        <button mat-raised-button color="warn">Search</button>
     </mat-card-actions>
 </mat-card>

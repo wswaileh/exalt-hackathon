@@ -12,7 +12,8 @@
         <ul class="navbar-nav ml-auto">
             <!-- GUEST -->
             <li class="nav-item" *ngIf="userType==1">
-                <a class="nav-link" (click)="collapse() ; login()">Login</a>
+                <a class="nav-link" (click)="collapse() ; logout()" *ngIf="isLoggedIn()">Logout</a>
+                <a class="nav-link" (click)="collapse() ; login()" *ngIf="!isLoggedIn()">Login</a>
             </li>
 
             <!-- ALL -->

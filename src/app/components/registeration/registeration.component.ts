@@ -72,10 +72,7 @@ export class RegisterationComponent {
       city: user.city,
       bloodType: user.bloodType
     }
-
-    console.log(user)
-    // this.signUpService.register(user);
-    console.log("after >>>>>> " + this.signUpService.register(user))
+    this.signUpService.register(user)
   }
 
 

@@ -61,6 +61,7 @@ import { HospitalHomeComponent } from './components/hospital-home/hospital-home.
 import { UsersComponent } from './components/users/users.component';
 import { HospitalsComponent } from './components/hospitals/hospitals.component';
 import { HospitalAddEmergencyComponent } from './components/hospital-add-emergency/hospital-add-emergency.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
@@ -115,6 +116,15 @@ import { HospitalAddEmergencyComponent } from './components/hospital-add-emergen
 
     AngularFireAuthModule,
     MatDialogModule,
+    NgCircleProgressModule.forRoot({
+      // set defaults here
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300,
+    }),
 
     //Fontawesome
     AngularFontAwesomeModule,

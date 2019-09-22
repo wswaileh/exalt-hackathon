@@ -12,11 +12,5 @@ export class AppComponent implements OnInit{
   constructor(private auth: AngularFireAuth){}
 
   ngOnInit(){
-
-        this.auth.authState.subscribe(user =>{
-
-          console.log(user);
-
-        })
   }
 }

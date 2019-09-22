@@ -1,18 +1,32 @@
-<form [formGroup]="secondFormGroup" (ngSubmit)="onSubmit1()" class="sign-in">
-    <div class="form-group">
-        <label>Blood Type</label>
-        <select class="form-control" [(ngModel)]="bloodType" formControlName="bloodType"
-            [ngClass]="{ 'is-invalid': f2.bloodType.errors && f2.bloodType.touched }">
-            <option *ngFor="let bloodType of bloodTypes" value="{{ bloodType }}">
-                {{bloodType}}
-            </option>
-        </select>
-        <div *ngIf="f2.bloodType.errors && f2.bloodType.touched" class="invalid-feedback">
-            <div *ngIf="f2.bloodType.errors.required">blood Type is required</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Add Emergency</h5>
+                    <form>
+                        <div class="form-group">
+                            <label>Blood Type</label>
+                            <select class="form-control" [(ngModel)]="bloodType" formControlName="bloodType">
+                                <option *ngFor="let bloodType of bloodTypes" value="{{ bloodType }}">
+                                    {{bloodType}}
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>ID Number</label>
+                            <input formControlName="id_numberCheck" class="form-control" [(ngModel)]="numOfUnits"
+                                type="number" />
+                        </div>
+
+                        <div class="form-group">
+                            <button class="btn btn-primary"
+                                style="width: 100%">Create</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
-    <div>
-        <button type="button" nextStep [disabled]="!secondFormGroup.valid" class="btn btn-success">Go to next
-            step</button>
-    </div>
-</form>
+</div>

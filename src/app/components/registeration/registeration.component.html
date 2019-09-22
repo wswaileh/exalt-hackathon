@@ -8,14 +8,11 @@
                             <h5 class="card-title text-center">Pre-requerments</h5>
                             <form [formGroup]="firstFormGroup" (ngSubmit)="onSubmit2()" class="sign-in">
                                 <div class="form-group">
-
                                     <p>
-                                        <label style="margin-right:6px "> Do You have any Disease ? </label>
+                                        <label style="margin-right:6px "> Do You have any Disease ?</label>
                                         <input type="radio" value="yes" formControlName="haveDisease"> Yes
                                         <input type="radio" value="no" formControlName="haveDisease"> No
                                     </p>
-
-
                                 </div>
                                 <div>
                                     <button type="button" nextStep (click)="denied()" class="btn btn-success">Next
@@ -63,7 +60,7 @@
                                         <div *ngIf="f2.phone.errors && f2.phone.touched " class="invalid-feedback">
                                             <div *ngIf="f2.phone.errors.required">phone is required</div>
                                             <div *ngIf="f2.phone.errors.minlength">phone must be 9 characters
-                                                
+
                                             </div>
                                         </div>
 

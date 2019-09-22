@@ -14,14 +14,15 @@ export class SignupService {
 
   }
 
-  register(user: User){
+  register(user: User) {
 
 
     this.users.add(user).then(function (result) {
       return true;
-    }, function (err) {
-      return false;
-    });
+    })
+      .catch(function (error) {
+        return false;
+      })
 
   }
 }

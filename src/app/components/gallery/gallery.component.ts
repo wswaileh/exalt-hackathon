@@ -8,7 +8,7 @@ import { Image } from '../../models/image';
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.scss'],
   providers: [
-    { provide: CarouselConfig, useValue: { interval: 1500, noPause: true, showIndicators: true } }
+    { provide: CarouselConfig, useValue: { interval: 4500, noPause: true, showIndicators: true } }
   ]
 })
 export class GalleryComponent implements OnInit {

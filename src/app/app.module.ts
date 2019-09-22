@@ -40,6 +40,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { LoginComponent } from './components/login/login.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
+//SVG 
+import { InlineSVGModule } from 'ng-inline-svg';
+
+
+//Fontawesome
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -80,9 +88,14 @@ import { LoginComponent } from './components/login/login.component';
     MatButtonModule,
     MatRadioModule,
     MatSelectModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    MatDialogModule,
+
+    //Fontawesome
+    AngularFontAwesomeModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [LoginComponent]
 })
 export class AppModule { }

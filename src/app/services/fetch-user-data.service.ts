@@ -19,10 +19,10 @@ export class FetchUserDataService {
   }
 
 
-  fetchData(email: string) {
+  fetchData(email: string){
 
-    this.user = this.firestore.collection<User>("users", ref => ref.where("email", "==", email)).valueChanges()
-    return this.user;
+   this.user =  this.firestore.collection<User>("users" , ref =>  ref.where("email", "==", email)).valueChanges()
+      return this.user;
   }
 
 

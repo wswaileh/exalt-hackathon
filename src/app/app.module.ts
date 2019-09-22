@@ -14,6 +14,7 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 
 //NGX-BOOSTRAP
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 //ANGULAR FIREBASE
 import { AngularFireModule } from 'angularfire2';
@@ -54,7 +55,7 @@ import { BlockUIModule } from 'ng-block-ui';
     ContactUsComponent,
     RegisterationComponent,
     LoginComponent,
-    UserHomeComponent
+    UserHomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,6 +65,7 @@ import { BlockUIModule } from 'ng-block-ui';
     //NGX-BOOTSTRAP
     CarouselModule.forRoot(),
     ButtonsModule.forRoot(),
+    BsDatepickerModule.forRoot(),
     //ANGULAR FIREBASE
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,

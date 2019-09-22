@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg bg-primary navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" routerLink="">
         <img src="../../../assets/icon_large.png" width="60" height="60" class="d-inline-block align-top" alt="">
         <span id="title">{{title}}</span>
       </a>
@@ -11,7 +11,7 @@
     <div class="collapse navbar-collapse" id="navbarNav" [collapse]="isNavbarCollapsed">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" routerLink="login" (click)="collapse()">Login</a>
+                <a class="nav-link" (click)="collapse() ; login()">Login</a>
             </li>
         </ul>
     </div>

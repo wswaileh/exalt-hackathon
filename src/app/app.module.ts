@@ -14,6 +14,7 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 
 //NGX-BOOSTRAP
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 //ANGULAR FIREBASE
 import { AngularFireModule } from 'angularfire2';
@@ -38,6 +39,15 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { LoginComponent } from './components/login/login.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
+//SVG 
+import { InlineSVGModule } from 'ng-inline-svg';
+
+
+//Fontawesome
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 import { UserHomeComponent } from './components/user-home/user-home.component';
 import { ToastrModule } from 'ngx-toastr';
 import { ArchwizardModule } from 'ng2-archwizard';
@@ -71,6 +81,7 @@ import { ChartsModule } from 'ng2-charts';
     //NGX-BOOTSTRAP
     CarouselModule.forRoot(),
     ButtonsModule.forRoot(),
+    BsDatepickerModule.forRoot(),
     //ANGULAR FIREBASE
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
@@ -91,6 +102,13 @@ import { ChartsModule } from 'ng2-charts';
     MatRadioModule,
     MatSelectModule,
     ChartsModule,
+
+    AngularFireAuthModule,
+    MatDialogModule,
+
+    //Fontawesome
+    AngularFontAwesomeModule,
+
     BlockUIModule.forRoot({
       delayStart: 500,
       delayStop: 500
@@ -98,8 +116,10 @@ import { ChartsModule } from 'ng2-charts';
     AngularFireAuthModule,
     ArchwizardModule,
     ToastrModule.forRoot({ positionClass: 'toast-top-right', preventDuplicates: true })
+
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [LoginComponent]
 })
 export class AppModule { }

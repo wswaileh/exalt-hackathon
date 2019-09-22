@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵbypassSanitizationTrustResourceUrl } from '@angular/core';
 import { History } from 'src/app/models/history';
 
 @Component({
@@ -8,11 +8,15 @@ import { History } from 'src/app/models/history';
 })
 export class UserHomeComponent implements OnInit {
 
+  origHistory: History[];
   history: History[];
-  
-  constructor() { 
-    this.history = [];
-    this.history.push(
+
+  hospital: string;
+  numOfBloodUnits: string;
+
+  constructor() {
+    this.origHistory = [];
+    this.origHistory.push(
       new History(
         '21-3-2019',
         'Istishari',
@@ -29,10 +33,37 @@ export class UserHomeComponent implements OnInit {
         '2'
       ),
     )
+    this.history = [...this.origHistory];
 
   }
 
   ngOnInit() {
   }
 
+
+  searchByNum() {
+    if (this.numOfBloodUnits == "")
+      this.history = [...this.origHistory];
+    else
+      this.history = this.history.filter(
+        (entry) => {
+          if (entry.numOfBloodUnits == this.numOfBloodUnits)
+            return true;
+          return false;
+        }
+      );
+  }
+
+  searchByHospital() {
+    if (this.hospital == "")
+      this.history = [...this.origHistory];
+    else
+      this.history = this.history.filter(
+        (entry) => {
+          if (entry.hospital.toLowerCase().startsWith(this.hospital.toLowerCase()))
+            return true;
+          return false;
+        }
+      );
+  }
 }

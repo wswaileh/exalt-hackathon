@@ -42,12 +42,22 @@ export class NavbarComponent implements OnInit {
   isLoggedIn(): boolean {
     const  user  =  JSON.parse(localStorage.getItem('user'));
     return  user  !==  null;
+  
 }
 
 async logout(){
+
+  if(localStorage.getItem("role") != "admin" && localStorage.getItem("role") != "hospital"){
   await this.auth.auth.signOut();
   localStorage.removeItem('user');
-  this.router.navigate(['home']);
+  
+  }
+
+  localStorage.setItem("role", "guest");
+
+  this.router.navigate(['/home']);
+
+
 }
 
 }

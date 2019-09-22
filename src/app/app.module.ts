@@ -42,6 +42,10 @@ import { UserHomeComponent } from './components/user-home/user-home.component';
 import { ToastrModule } from 'ngx-toastr';
 import { ArchwizardModule } from 'ng2-archwizard';
 import { BlockUIModule } from 'ng-block-ui';
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { ChartsComponent } from './components/admin-panel/charts/charts.component';
+import { ChartsModule } from 'ng2-charts';
+
 
 @NgModule({
   declarations: [
@@ -54,7 +58,10 @@ import { BlockUIModule } from 'ng-block-ui';
     ContactUsComponent,
     RegisterationComponent,
     LoginComponent,
-    UserHomeComponent
+    UserHomeComponent,
+    AdminPanelComponent,
+    ChartsComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -83,6 +90,7 @@ import { BlockUIModule } from 'ng-block-ui';
     MatButtonModule,
     MatRadioModule,
     MatSelectModule,
+    ChartsModule,
     BlockUIModule.forRoot({
       delayStart: 500,
       delayStop: 500

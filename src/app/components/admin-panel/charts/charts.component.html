@@ -1,0 +1,53 @@
+<p>charts works!</p>
+
+<div class="row">
+    <div class="col-xl-3 col-sm-6 mb-3" style="margin-right: 50px;margin-left: 20px">
+        <div class="card text-white bg-primary o-hidden h-100">
+            <div class="card-body">
+                <div class="card-body-icon">
+                    <i class="fas fa-fw fa-users"></i>
+                </div>
+                <div class="mr-5">26 User</div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" routerLink="/users">
+                <span class="float-left" >View Details</span>
+                <span class="float-right">
+                    <i class="fas fa-angle-right"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+    <div class="col-xl-3 col-sm-6 mb-3" style="margin-right: 50px">
+        <div class="card text-white bg-warning o-hidden h-100">
+            <div class="card-body">
+                <div class="card-body-icon">
+                    <i class="fas fa-fw fa-hospital"></i>
+                </div>
+                <div class="mr-5">3 Hospitals</div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" href="#">
+                <span class="float-left">View Details</span>
+                <span class="float-right">
+                    <i class="fas fa-angle-right"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+    
+   
+</div>
+<div class="row" >
+    <div class="col-sm-4">
+        <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [colors]="pieChartColors" [legend]="pieChartLegend"
+            title="users Donation per city">
+        </canvas>
+    </div>
+    <div class="col-sm-4">
+        <canvas baseChart [data]="pieChartData2" [labels]="pieChartLabels2" [chartType]="pieChartType2"
+            [options]="pieChartOptions2" [colors]="pieChartColors2" [legend]="pieChartLegend2"
+             title="Your Users Per City Status" style="width: 20%">
+        </canvas>
+    </div>
+    
+</div>

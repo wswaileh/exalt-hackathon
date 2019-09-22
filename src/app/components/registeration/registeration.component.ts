@@ -28,23 +28,24 @@ export class RegisterationComponent {
   password: String;
   new_user: User;
   submitted = false
-  clickedForBlock=false
+  clickedForBlock = false
   @BlockUI() blockUI: NgBlockUI;
 
   constructor(private _formBuilder: FormBuilder, private toaster: ToastrService,
     private router: Router, private signUpService: SignupService) {
 
-   
+
 
   }
   blockLoading() {
-    this.clickedForBlock=true
+    this.clickedForBlock = true
     this.blockUI.start('Loading...'); // Start blocking
 
     setTimeout(() => {
       this.blockUI.stop(); // Stop blocking
       this.router.navigate(['/user-home'])
-    }, 2000);  }
+    }, 2000);
+  }
 
   ngOnInit() {
 

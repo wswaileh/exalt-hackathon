@@ -8,7 +8,6 @@
                     <div class="d-flex justify-content-end social_icon">
                         <span><fa name="facebook-square"></fa></span>
                         <span><fa name="google-plus-square"></fa></span>
-                        <span><fa name="twitter-square"></fa></span>
                     </div>
                 </div>
                 <div class="card-body">
@@ -17,7 +16,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><fa name="user"></fa></span>
                             </div>
-                            <input type="email" class="form-control" formControlName="email" [(ngModel)]="email" placeholder="username">
+                            <input type="email" class="form-control" [(ngModel)]="email" name="email" placeholder="username">
                             
                         </div>
                     
@@ -25,11 +24,11 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><fa name="key"></fa></span>
                             </div>
-                            <input type="password" class="form-control" placeholder="password" formControlName="password" [(ngModel)]="password" >
+                            <input type="password" class="form-control" placeholder="password" name="password"  [(ngModel)]="password" >
                         </div>
                        
                         <div class="form-group">
-                            <button class="btn float-right login_btn" (click) = "loginWithEmailAndPassword(email , password)">Login</button>
+                            <button class="btn float-right login_btn" (click) = "loginWithEmailAndPassword()">Login</button>
                         </div>
                     </form>
                 </div>

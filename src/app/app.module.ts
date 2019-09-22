@@ -52,7 +52,14 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { ToastrModule } from 'ngx-toastr';
 import { ArchwizardModule } from 'ng2-archwizard';
 import { BlockUIModule } from 'ng-block-ui';
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { ChartsComponent } from './components/admin-panel/charts/charts.component';
+import { ChartsModule } from 'ng2-charts';
+
 import { DonateComponent } from './components/donate/donate.component';
+import { HospitalHomeComponent } from './components/hospital-home/hospital-home.component';
+import { UsersComponent } from './components/users/users.component';
+import { HospitalsComponent } from './components/hospitals/hospitals.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +73,13 @@ import { DonateComponent } from './components/donate/donate.component';
     RegisterationComponent,
     LoginComponent,
     UserHomeComponent,
+    AdminPanelComponent,
+    ChartsComponent,
+    
     DonateComponent,
+    HospitalHomeComponent,
+    UsersComponent,
+    HospitalsComponent,
   ],
   imports: [
     BrowserModule,
@@ -96,6 +109,7 @@ import { DonateComponent } from './components/donate/donate.component';
     MatButtonModule,
     MatRadioModule,
     MatSelectModule,
+    ChartsModule,
 
     AngularFireAuthModule,
     MatDialogModule,

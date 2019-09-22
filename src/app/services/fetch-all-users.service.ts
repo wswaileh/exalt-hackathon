@@ -13,8 +13,8 @@ export class FetchAllUsersService {
   constructor(private firestore: AngularFirestore) {
  }
 
-
    getAllUsers(){
-     return this.firestore.collection("users").snapshotChanges();
+     return this.firestore.collection("users").valueChanges();
+
    }
 }

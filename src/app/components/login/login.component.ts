@@ -11,9 +11,8 @@ export class LoginComponent implements OnInit {
 
 
 
-  @Input('email')
+  
   email: string;
-  @Input('password')
   password: string;
 
   constructor(private singinService: SigninService) { }
